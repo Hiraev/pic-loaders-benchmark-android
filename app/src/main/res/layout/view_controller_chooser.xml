@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Caching enabled: "
+                android:textColor="@color/global_black_50" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_is_caching_enabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_red_dark"
+                android:textFontWeight="900"
+                tools:text="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/view_controller_chooser_clear_caches"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="Clear Caches"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Different images on Screen"
+            android:textColor="@color/global_white_90" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_controller_chooser_glide"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Glide"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_fresco"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_fresco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Fresco"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_glide"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_picasso" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_picasso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Picasso"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_fresco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--LARGE PNG-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Recycler view. Large PNG"
+            android:textColor="@color/global_white_90" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_glide_large_png"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Glide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_fresco_large_png"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_fresco_large_png"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Fresco"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_glide_large_png"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_picasso_large_png"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_picasso_large_png"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Picasso"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_fresco_large_png"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--SMALL PNG-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Recycler view. Small PNG"
+            android:textColor="@color/global_white_90" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_glide_small_png"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Glide"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_fresco_small_png" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_fresco_small_png"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Fresco"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_glide_small_png"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_picasso_small_png"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_picasso_small_png"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Picasso"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_fresco_small_png"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--LARGE JPEG-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Recycler view. Large JPEG"
+            android:textColor="@color/global_white_90" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_glide_large_jpg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Glide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_fresco_large_jpg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_fresco_large_jpg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Fresco"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_glide_large_jpg"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_picasso_large_jpg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_picasso_large_jpg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Picasso"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_fresco_large_jpg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--SMALL JPEG-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Recycler view. Small JPEG"
+            android:textColor="@color/global_white_90" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_glide_small_jpg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Glide"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_fresco_small_jpg" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_fresco_small_jpg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Fresco"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_glide_small_jpg"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_picasso_small_jpg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_picasso_small_jpg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Picasso"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_fresco_small_jpg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--LARGE WEBP-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Recycler view. Large WEBP"
+            android:textColor="@color/global_white_90" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_glide_large_webp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Glide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_fresco_large_webp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_fresco_large_webp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Fresco"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_glide_large_webp"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_picasso_large_webp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_picasso_large_webp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Picasso"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_fresco_large_webp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--SMALL WEBP-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Recycler view. Small WEBP"
+            android:textColor="@color/global_white_90" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_glide_small_webp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Glide"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_fresco_small_webp" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_fresco_small_webp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Fresco"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_glide_small_webp"
+                app:layout_constraintEnd_toStartOf="@id/view_controller_chooser_recycler_picasso_small_webp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_controller_chooser_recycler_picasso_small_webp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Picasso"
+                app:layout_constraintStart_toEndOf="@id/view_controller_chooser_recycler_fresco_small_webp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>
