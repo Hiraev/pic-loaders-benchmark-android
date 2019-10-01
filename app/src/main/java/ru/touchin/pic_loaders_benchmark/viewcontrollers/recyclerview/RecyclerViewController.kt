@@ -3,12 +3,13 @@ package ru.touchin.pic_loaders_benchmark.viewcontrollers.recyclerview
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.touchin.pic_loaders_benchmark.R
-import ru.touchin.roboswag.components.navigation.activities.NavigationActivity
-import ru.touchin.roboswag.components.navigation.viewcontrollers.ViewController
 import ru.touchin.pic_loaders_benchmark.ImagePaths
+import ru.touchin.pic_loaders_benchmark.utils.Timer
 import ru.touchin.pic_loaders_benchmark.viewcontrollers.recyclerview.delegates.FrescoImageDelegate
 import ru.touchin.pic_loaders_benchmark.viewcontrollers.recyclerview.delegates.GlideImagesDelegate
 import ru.touchin.pic_loaders_benchmark.viewcontrollers.recyclerview.delegates.PicassoImagesDelegate
+import ru.touchin.roboswag.components.navigation.activities.NavigationActivity
+import ru.touchin.roboswag.components.navigation.viewcontrollers.ViewController
 
 class RecyclerViewController(
         creationContext: CreationContext
@@ -18,6 +19,8 @@ class RecyclerViewController(
 ) {
 
     init {
+        Timer.resetTimer()
+        Timer.onTimerChangeListener = ::onTimerChangeListener
         findViewById<RecyclerView>(R.id.view_controller_recycler_images_recyclerview).adapter =
                 ListImagesAdapter().also {
                     it.addDelegate(
@@ -40,7 +43,6 @@ class RecyclerViewController(
                     )
                 }
         findViewById<TextView>(R.id.view_controller_recycler_title).text = "${state.picProcessor} ${state.picType} ${state.picSize}"
-
     }
 
     override fun onPause() {
@@ -50,6 +52,11 @@ class RecyclerViewController(
             RecyclerViewState.PicProcessor.PICASSO -> ImagePaths.invalidatePicasso()
         }
         super.onPause()
+    }
+
+    private fun onTimerChangeListener(count: Long, average: Double) {
+        findViewById<TextView>(R.id.view_controller_recycler_images_completely_load).text = count.toString()
+        findViewById<TextView>(R.id.view_controller_recycler_images_average_time).text = average.toString()
     }
 
 }
