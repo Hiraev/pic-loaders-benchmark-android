@@ -11,6 +11,7 @@
     <ImageView
         android:id="@+id/item_card_image_imageview"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="100dp"
+        android:scaleType="centerCrop" />
 
 </androidx.cardview.widget.CardView>

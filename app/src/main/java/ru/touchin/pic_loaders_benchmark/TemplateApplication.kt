@@ -1,6 +1,8 @@
 package ru.touchin.pic_loaders_benchmark
 
 import androidx.appcompat.app.AppCompatDelegate
+import coil.Coil
+import coil.ImageLoader
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.touchin.pic_loaders_benchmark.BuildConfig
@@ -22,7 +24,7 @@ class TemplateApplication : TouchinApp(), ViewModelFactoryProvider {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         initializeDagger()
         initializeFresco()
-        initializePicasso()
+        initializeCoil()
     }
 
     private fun initializeDagger() {
@@ -44,7 +46,12 @@ class TemplateApplication : TouchinApp(), ViewModelFactoryProvider {
         }
     }
 
-    private fun initializePicasso() {
+    private fun initializeCoil() {
+        if (!BuildConfig.IMAGES_CACHING) {
+            Coil.setDefaultImageLoader(ImageLoader.invoke(this) {
+                availableMemoryPercentage(0.0)
+            })
+        }
     }
 
 }

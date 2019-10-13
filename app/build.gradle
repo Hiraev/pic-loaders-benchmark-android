@@ -23,6 +23,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
     signingConfigs {
         release {
             storeFile file("keystore/touchin.jks")
@@ -136,6 +140,9 @@ dependencies {
 
     // Fresco
     implementation "com.facebook.fresco:fresco:$versions.fresco"
+
+    // Coil
+    implementation("io.coil-kt:coil:$versions.coil")
 }
 
 apply from: "$buildScriptsDir/gradle/staticAnalysis.gradle"

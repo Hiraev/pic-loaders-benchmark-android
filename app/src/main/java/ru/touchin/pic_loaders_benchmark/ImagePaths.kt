@@ -2,13 +2,14 @@ package ru.touchin.pic_loaders_benchmark
 
 import android.content.Context
 import android.os.AsyncTask
+import coil.Coil
 import com.bumptech.glide.Glide
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.squareup.picasso.Picasso
 
 object ImagePaths {
 
-    private const val numOfImages = 25
+    private const val numOfImages = 1000
 
     val png_large = List(numOfImages) { "$images_path$large_dir${it + 1}$png_ext" }
     val jpg_large = List(numOfImages) { "$images_path$large_dir${it + 1}$jpg_ext" }
@@ -17,6 +18,8 @@ object ImagePaths {
     val png_small = List(numOfImages) { "$images_path$small_dir${it + 1}$png_ext" }
     val jpg_small = List(numOfImages) { "$images_path$small_dir${it + 1}$jpg_ext" }
     val webp_small = List(numOfImages) { "$images_path$small_dir${it + 1}$webp_ext" }
+
+    val jpg_list = List(numOfImages) { "http://deremenko.simsim.ftp.sh:80/img/pic_${it}.jpg" }
 
     private const val images_path = "https://github.com/Hiraev/pic-loaders-benchmark/raw/master/images/"
     private const val large_dir = "large/"
@@ -29,6 +32,7 @@ object ImagePaths {
         invalidateGlide(context)
         invalidateFresco()
         invalidatePicasso()
+        invalidateCoil()
     }
 
     fun invalidateGlide(context: Context) {
@@ -44,6 +48,10 @@ object ImagePaths {
         for (path in png_large + jpg_large + webp_large + png_small + jpg_small + webp_small) {
             Picasso.get().invalidate(path)
         }
+    }
+
+    fun invalidateCoil() {
+        Coil.loader().clearMemory()
     }
 
     private class Invalidator(private val glide: Glide) : AsyncTask<Unit, Unit, Unit>() {

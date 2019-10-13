@@ -12,6 +12,8 @@
         android:id="@+id/item_card_image_imageview"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        app:fadeDuration="0"
+        app:actualImageScaleType="centerCrop"
         app:placeholderImage="@drawable/placeholder_loading"
         app:failureImage="@drawable/placeholder_error" />
 

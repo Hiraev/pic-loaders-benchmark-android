@@ -2,7 +2,7 @@ package ru.touchin.pic_loaders_benchmark.utils
 
 object Timer {
 
-    private var average: Double = 0.0
+    private var sum: Double = 0.0
     private var count: Long = 0
 
     private val times = mutableMapOf<String, Long>()
@@ -10,7 +10,7 @@ object Timer {
     var onTimerChangeListener: (Long, Double) -> Unit = { _, _ -> }
 
     fun resetTimer() {
-        average = 0.0
+        sum = 0.0
         count = 0
         times.clear()
     }
@@ -21,9 +21,9 @@ object Timer {
 
     fun stopTimer(key: String) {
         times[key]?.let {
-            average = (average + (System.currentTimeMillis() - it)) / 2
+            sum += (System.currentTimeMillis() - it).toDouble()
             count++
-            onTimerChangeListener.invoke(count, average)
+            onTimerChangeListener.invoke(count, sum / count)
         }
         times -= key
     }

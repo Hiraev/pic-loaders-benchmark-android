@@ -55,5 +55,6 @@ ext {
             glide      : '4.9.0',
             picasso    : '2.71828',
             fresco     : '2.0.0',
+            coil       : '0.7.0'
     ]
 }

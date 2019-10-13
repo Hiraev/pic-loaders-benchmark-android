@@ -11,7 +11,7 @@ class RecyclerViewState(
 ) : Parcelable {
 
     enum class PicProcessor {
-        GLIDE, FRESCO, PICASSO
+        GLIDE, FRESCO, PICASSO, COIL
     }
 
     enum class PicType {

@@ -44,6 +44,7 @@ fun <T : FragmentActivity, P : Parcelable> ViewController<T, P>.picasso(
         onLoad: () -> Unit = ::emptyAction
 ) = Picasso.get()
         .load(path)
+        .noFade()
         .disableCachingIfNeeded()
         .placeholder(R.drawable.placeholder_loading)
         .error(R.drawable.placeholder_error)
@@ -72,6 +73,7 @@ fun picasso(
         onLoad: () -> Unit
 ) = Picasso.get()
         .load(path)
+        .noFade()
         .placeholder(R.drawable.placeholder_loading)
         .error(R.drawable.placeholder_error)
         .fit()
